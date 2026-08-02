@@ -1,0 +1,18 @@
+# very_good_analysis 린트 규칙을 기반으로 사용한다.
+# 코드 생성 파일(*.g.dart / *.freezed.dart)은 분석에서 제외한다.
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "lib/generated/**"
+
+linter:
+  rules:
+    # 문서화 강제는 초기 스캐폴딩 단계에선 완화 (기능 안정화 후 재검토)
+    public_member_api_docs: false
+    # 80자 줄바꿈 강제 완화 (한글 주석/URL 가독성)
+    lines_longer_than_80_chars: false
+    # SDK(flutter) 항목을 맨 위에 두는 관례와 충돌 → 비활성화
+    sort_pub_dependencies: false
